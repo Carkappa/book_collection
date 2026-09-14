@@ -18,11 +18,11 @@ RSpec.describe "/books", type: :request do
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { title: "The Pragmatic Programmer" }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { title: "" }
   }
 
   describe "GET /index" do
@@ -64,9 +64,9 @@ RSpec.describe "/books", type: :request do
         }.to change(Book, :count).by(1)
       end
 
-      it "redirects to the created book" do
+      it "redirects to the books list" do
         post books_url, params: { book: valid_attributes }
-        expect(response).to redirect_to(book_url(Book.last))
+        expect(response).to redirect_to(books_url)
       end
     end
 
@@ -87,21 +87,21 @@ RSpec.describe "/books", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { title: "Refactoring" }
       }
 
       it "updates the requested book" do
         book = Book.create! valid_attributes
         patch book_url(book), params: { book: new_attributes }
         book.reload
-        skip("Add assertions for updated state")
+        expect(book.title).to eq("Refactoring")
       end
 
-      it "redirects to the book" do
+      it "redirects to the books list" do
         book = Book.create! valid_attributes
         patch book_url(book), params: { book: new_attributes }
         book.reload
-        expect(response).to redirect_to(book_url(book))
+        expect(response).to redirect_to(books_url)
       end
     end
 
@@ -111,6 +111,14 @@ RSpec.describe "/books", type: :request do
         patch book_url(book), params: { book: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_content)
       end
+    end
+  end
+
+  describe "GET /delete" do
+    it "renders the delete confirmation page" do
+      book = Book.create! valid_attributes
+      get delete_book_url(book)
+      expect(response).to be_successful
     end
   end
 

@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :set_book, only: %i[ show edit update delete destroy ]
 
   # GET /books or /books.json
   def index
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: "Book was successfully created." }
+        format.html { redirect_to books_path, notice: "Book was successfully created.", status: :see_other }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new, status: :unprocessable_content }
@@ -38,7 +38,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: "Book was successfully updated.", status: :see_other }
+        format.html { redirect_to books_path, notice: "Book was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit, status: :unprocessable_content }
@@ -47,12 +47,16 @@ class BooksController < ApplicationController
     end
   end
 
+  # GET /books/1/delete
+  def delete
+  end
+
   # DELETE /books/1 or /books/1.json
   def destroy
     @book.destroy!
 
     respond_to do |format|
-      format.html { redirect_to books_path, notice: "Book was successfully destroyed.", status: :see_other }
+      format.html { redirect_to books_path, notice: "Book was successfully deleted.", status: :see_other }
       format.json { head :no_content }
     end
   end
