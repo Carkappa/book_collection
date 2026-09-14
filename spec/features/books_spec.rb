@@ -20,6 +20,7 @@ RSpec.describe "Adding a book", type: :feature do
 
   it "rejects a blank title" do
     fill_in_book(title: "")
+    expect(page).to have_content("Book could not be saved.")
     expect(page).to have_content("Title can't be blank")
   end
 
