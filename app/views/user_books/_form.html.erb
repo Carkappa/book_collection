@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.select :user_id, User.order(:username).map { |user| [user.username, user.id] }, include_blank: true, id: "id_of_the_user_id_select_box" %>
+    <%= form.collection_select :user_id, @users, :id, :username, include_blank: true %>
   </div>
 
   <div>
     <%= form.label :book_id, style: "display: block" %>
-    <%= form.select :book_id, Book.order(:title).map { |book| [book.title, book.id] }, include_blank: true, id: "id_of_the_book_id_select_box" %>
+    <%= form.collection_select :book_id, @books, :id, :title, include_blank: true %>
   </div>
 
   <div>

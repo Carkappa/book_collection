@@ -1,5 +1,6 @@
 class UserBooksController < ApplicationController
   before_action :set_user_book, only: %i[ show edit update destroy ]
+  before_action :set_form_options, only: %i[ new edit create update ]
 
   # GET /user_books or /user_books.json
   def index
@@ -61,6 +62,12 @@ class UserBooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user_book
       @user_book = UserBook.find(params.expect(:id))
+    end
+
+    # Load the choices for the user and book drop-downs.
+    def set_form_options
+      @users = User.order(:username)
+      @books = Book.order(:title)
     end
 
     # Only allow a list of trusted parameters through.
