@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "User details" %>
+
+<h1>User details</h1>
 
 <%= render @user %>
 
+<h2>Books</h2>
+
+<% if @user.books.any? %>
+  <ul id="user_books">
+    <% @user.books.each do |book| %>
+      <li><%= link_to book.title, book %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No books yet.</p>
+<% end %>
+
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  <%= link_to "Back to users", users_path %> |
+  <%= link_to "Back to User Books", root_path %>
 
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>

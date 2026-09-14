@@ -9,6 +9,12 @@ RSpec.describe "/users", type: :request do
       get users_url
       expect(response).to be_successful
     end
+
+    it "links to new user and back to user books" do
+      get users_url
+      expect(response.body).to include(%(href="#{new_user_path}"))
+      expect(response.body).to include(%(href="#{root_path}"))
+    end
   end
 
   describe "GET /show" do
@@ -16,6 +22,31 @@ RSpec.describe "/users", type: :request do
       user = User.create! valid_attributes
       get user_url(user)
       expect(response).to be_successful
+    end
+
+    it "lists the user's books" do
+      user = User.create! valid_attributes
+      book = Book.create!(title: "Refactoring", author: "Martin Fowler", price: 49.99, published_date: Date.new(2018, 11, 20))
+      UserBook.create!(user: user, book: book)
+      get user_url(user)
+      expect(response.body).to include("Refactoring")
+    end
+  end
+
+  describe "POST /create with a flash notice" do
+    it "shows the notice only once" do
+      post users_url, params: { user: valid_attributes }
+      follow_redirect!
+      expect(response.body.scan("User was successfully created.").size).to eq(1)
+    end
+  end
+
+  describe "POST /create with invalid parameters" do
+    it "does not create a user with a blank username" do
+      expect {
+        post users_url, params: { user: { username: "" } }
+      }.to change(User, :count).by(0)
+      expect(response).to have_http_status(:unprocessable_content)
     end
   end
 
