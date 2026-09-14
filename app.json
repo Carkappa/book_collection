@@ -1,0 +1,8 @@
+{
+  "name": "book_collection",
+  "env": {
+    "RAILS_MASTER_KEY": { "required": true }
+  },
+  "addons": ["heroku-postgresql:essential-0"],
+  "buildpacks": [{ "url": "heroku/ruby" }]
+}
