@@ -18,11 +18,16 @@ RSpec.describe "/books", type: :request do
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { title: "The Pragmatic Programmer" }
+    {
+      title: "The Pragmatic Programmer",
+      author: "Andy Hunt",
+      price: 39.99,
+      published_date: Date.new(1999, 10, 20)
+    }
   }
 
   let(:invalid_attributes) {
-    { title: "" }
+    { title: "", author: "", price: nil, published_date: nil }
   }
 
   describe "GET /index" do
@@ -80,6 +85,30 @@ RSpec.describe "/books", type: :request do
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post books_url, params: { book: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_content)
+      end
+    end
+
+    context "with a missing author" do
+      it "does not create a new Book" do
+        expect {
+          post books_url, params: { book: valid_attributes.merge(author: "") }
+        }.to change(Book, :count).by(0)
+      end
+    end
+
+    context "with a missing price" do
+      it "does not create a new Book" do
+        expect {
+          post books_url, params: { book: valid_attributes.merge(price: nil) }
+        }.to change(Book, :count).by(0)
+      end
+    end
+
+    context "with a missing published date" do
+      it "does not create a new Book" do
+        expect {
+          post books_url, params: { book: valid_attributes.merge(published_date: nil) }
+        }.to change(Book, :count).by(0)
       end
     end
   end
