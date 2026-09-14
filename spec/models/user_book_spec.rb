@@ -22,6 +22,13 @@ RSpec.describe UserBook, type: :model do
       expect(user_book).not_to be_valid
       expect(user_book.errors[:book]).to include("must exist")
     end
+
+    it "is invalid when the user already has that book" do
+      UserBook.create!(user: user, book: book)
+      duplicate = UserBook.new(user: user, book: book)
+      expect(duplicate).not_to be_valid
+      expect(duplicate.errors[:book_id]).to include("is already in this user's collection")
+    end
   end
 
   describe "book associations" do
