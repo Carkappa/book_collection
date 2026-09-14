@@ -3,7 +3,7 @@ class UserBooksController < ApplicationController
 
   # GET /user_books or /user_books.json
   def index
-    @user_books = UserBook.all
+    @user_books = UserBook.includes(:user, :book)
   end
 
   # GET /user_books/1 or /user_books/1.json

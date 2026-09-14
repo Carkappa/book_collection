@@ -1,8 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "User Books" %>
 
-<% content_for :title, "User books" %>
-
-<h1>User books</h1>
+<h1>User Books</h1>
 
 <div id="user_books">
   <% @user_books.each do |user_book| %>
@@ -13,4 +11,8 @@
   <% end %>
 </div>
 
-<%= link_to "New user book", new_user_book_path %>
+<div>
+  <%= link_to "Books", books_path %> |
+  <%= link_to "Users", users_path %> |
+  <%= link_to "New user book", new_user_book_path %>
+</div>
