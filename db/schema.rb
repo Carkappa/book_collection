@@ -10,16 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_13_203000) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_14_032121) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.string "title"
-    t.datetime "updated_at", null: false
     t.string "author"
+    t.datetime "created_at", null: false
     t.decimal "price", precision: 8, scale: 2
     t.date "published_date"
+    t.string "title"
+    t.datetime "updated_at", null: false
   end
+
+  create_table "user_books", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["book_id"], name: "index_user_books_on_book_id"
+    t.index ["user_id"], name: "index_user_books_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+  end
+
+  add_foreign_key "user_books", "books"
+  add_foreign_key "user_books", "users"
 end
