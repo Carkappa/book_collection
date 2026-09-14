@@ -17,6 +17,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# json 3.0 drops the second argument to JSON.parse, which ActiveSupport 8.1
+# still passes when decrypting session cookies. Stay on 2.x, at 2.19.9+ for CVEs.
+gem "json", "~> 2.19", ">= 2.19.9"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
