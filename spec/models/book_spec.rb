@@ -1,54 +1,49 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
-  let(:valid_attributes) {
-    {
-      title: "The Pragmatic Programmer",
-      author: "Andy Hunt",
-      price: 39.99,
-      published_date: Date.new(1999, 10, 20)
-    }
-  }
+  def errors_for(attribute, value)
+    book = Book.new(attribute => value)
+    book.valid?
+    book.errors[attribute]
+  end
 
-  describe "validations" do
-    it "is valid with a title" do
-      expect(Book.new(valid_attributes.merge(title: "The Pragmatic Programmer"))).to be_valid
+  describe "title" do
+    it "is valid when present" do
+      expect(errors_for(:title, "The Pragmatic Programmer")).to be_empty
     end
 
-    it "is invalid without a title" do
-      book = Book.new(valid_attributes.merge(title: ""))
-      expect(book).not_to be_valid
-      expect(book.errors[:title]).to include("can't be blank")
+    it "is invalid when blank" do
+      expect(errors_for(:title, "")).to include("can't be blank")
+    end
+  end
+
+  describe "author" do
+    it "is valid when present" do
+      expect(errors_for(:author, "Andy Hunt")).to be_empty
     end
 
-    it "is valid with an author" do
-      expect(Book.new(valid_attributes.merge(author: "Andy Hunt"))).to be_valid
+    it "is invalid when blank" do
+      expect(errors_for(:author, "")).to include("can't be blank")
+    end
+  end
+
+  describe "price" do
+    it "is valid when present" do
+      expect(errors_for(:price, 39.99)).to be_empty
     end
 
-    it "is invalid without an author" do
-      book = Book.new(valid_attributes.merge(author: ""))
-      expect(book).not_to be_valid
-      expect(book.errors[:author]).to include("can't be blank")
+    it "is invalid when blank" do
+      expect(errors_for(:price, nil)).to include("can't be blank")
+    end
+  end
+
+  describe "published_date" do
+    it "is valid when present" do
+      expect(errors_for(:published_date, Date.new(1999, 10, 20))).to be_empty
     end
 
-    it "is valid with a price" do
-      expect(Book.new(valid_attributes.merge(price: 39.99))).to be_valid
-    end
-
-    it "is invalid without a price" do
-      book = Book.new(valid_attributes.merge(price: nil))
-      expect(book).not_to be_valid
-      expect(book.errors[:price]).to include("can't be blank")
-    end
-
-    it "is valid with a published date" do
-      expect(Book.new(valid_attributes.merge(published_date: Date.new(1999, 10, 20)))).to be_valid
-    end
-
-    it "is invalid without a published date" do
-      book = Book.new(valid_attributes.merge(published_date: nil))
-      expect(book).not_to be_valid
-      expect(book.errors[:published_date]).to include("can't be blank")
+    it "is invalid when blank" do
+      expect(errors_for(:published_date, nil)).to include("can't be blank")
     end
   end
 end

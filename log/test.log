@@ -1365,3 +1365,937 @@ Processing by BooksController#destroy as HTML
 Redirected to http://www.example.com/books
 Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.3ms | GC: 0.1ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.5ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.9ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:22.496834"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:22.496834"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 2ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:22.510385"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:22.510385"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:22.515621"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:22.515621"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:22.520224"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:22.520224"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:22 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.2ms | GC: 0.2ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.5ms)
+Completed 200 OK in 16ms (Views: 5.1ms | ActiveRecord: 5.1ms (0 queries, 0 cached) | GC: 1.4ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.010073"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.010073"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 2ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.1ms | GC: 0.8ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 1.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.3ms | GC: 0.9ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 1.1ms)
+Completed 422 Unprocessable Content in 4ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.9ms | GC: 0.7ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 1.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.044389"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.044389"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.6ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.6ms | GC: 0.3ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.054738"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.054738"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.060242"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.060242"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.067992"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.067992"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.070534"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.070534"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books/43" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id" => "43"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.075050"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.075050"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books/44/edit" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#edit as HTML
+  Parameters: {"id" => "44"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.078934"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.078934"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.080853"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.080853"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "", "price" => nil, "published_date" => nil}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "", "price" => nil, "published_date" => nil}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "", "price" => "39.99", "published_date" => "1999-10-20"}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => nil, "published_date" => "1999-10-20"}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => nil}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.092476"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.092476"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/books/47" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"book" => {"title" => "Refactoring"}, "id" => "47"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "title" = $1, "updated_at" = $2 WHERE "books"."id" = $3[0m  [["title", "Refactoring"], ["updated_at", "2026-09-14 02:13:23.093559"], ["id", 47]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.095947"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.095947"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/books/48" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"book" => {"title" => "Refactoring"}, "id" => "48"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "title" = $1, "updated_at" = $2 WHERE "books"."id" = $3[0m  [["title", "Refactoring"], ["updated_at", "2026-09-14 02:13:23.097066"], ["id", 48]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.098686"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.098686"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/books/49" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"book" => {"title" => "", "author" => "", "price" => nil, "published_date" => nil}, "id" => "49"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.101376"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.101376"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books/50/delete" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#delete as HTML
+  Parameters: {"id" => "50"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/delete.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/delete.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.103514"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.103514"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started DELETE "/books/51" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#destroy as HTML
+  Parameters: {"id" => "51"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 51]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:13:23.106011"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:13:23.106011"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/books/52" for 127.0.0.1 at 2026-09-13 21:13:23 -0500
+Processing by BooksController#destroy as HTML
+  Parameters: {"id" => "52"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 52]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public[0m
+  [1m[35m (42.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "book_collection_test"[0m
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE DATABASE "book_collection_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "title" character varying, "updated_at" timestamp(6) NOT NULL, "author" character varying, "price" decimal(8,2), "published_date" date)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260913203000)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260909011204);[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2026-09-14 02:14:18.584704', '2026-09-14 02:14:18.584705') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'e049610d83d467a6321fa09d9fb8d382d6e9cfa8', '2026-09-14 02:14:18.585797', '2026-09-14 02:14:18.585798') RETURNING "key"[0m
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.5ms)
+Completed 200 OK in 17ms (Views: 6.6ms | ActiveRecord: 3.8ms (0 queries, 0 cached) | GC: 1.3ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (1.2ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.121767"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.121767"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 2ms (ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.4ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.3ms | GC: 0.8ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 1.1ms)
+Completed 422 Unprocessable Content in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.5ms | GC: 0.2ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.9ms)
+Completed 200 OK in 1ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.153316"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.153316"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.1ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.6ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.6ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.5ms | GC: 0.2ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.4ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.163467"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.163467"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}, "commit" => "Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.168730"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.168730"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.176646"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.176646"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "books" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.178949"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.178949"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books/6" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id" => "6"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/books/new" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.4ms | GC: 0.1ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.183427"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.183427"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books/7/edit" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#edit as HTML
+  Parameters: {"id" => "7"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.4ms | GC: 0.1ms)
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.1ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.187038"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.187038"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => "1999-10-20"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.188926"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.188926"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "", "price" => nil, "published_date" => nil}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "", "author" => "", "price" => nil, "published_date" => nil}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "", "price" => "39.99", "published_date" => "1999-10-20"}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => nil, "published_date" => "1999-10-20"}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"book" => {"title" => "The Pragmatic Programmer", "author" => "Andy Hunt", "price" => "39.99", "published_date" => nil}}
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered books/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.200191"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.200191"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/books/10" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"book" => {"title" => "Refactoring"}, "id" => "10"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "title" = $1, "updated_at" = $2 WHERE "books"."id" = $3[0m  [["title", "Refactoring"], ["updated_at", "2026-09-14 02:14:19.201056"], ["id", 10]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.202899"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.202899"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/books/11" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"book" => {"title" => "Refactoring"}, "id" => "11"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "title" = $1, "updated_at" = $2 WHERE "books"."id" = $3[0m  [["title", "Refactoring"], ["updated_at", "2026-09-14 02:14:19.203790"], ["id", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.205151"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.205151"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/books/12" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"book" => {"title" => "", "author" => "", "price" => nil, "published_date" => nil}, "id" => "12"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.207681"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.207681"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/books/13/delete" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#delete as HTML
+  Parameters: {"id" => "13"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/delete.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered books/delete.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.209707"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.209707"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started DELETE "/books/14" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#destroy as HTML
+  Parameters: {"id" => "14"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 14]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mBook Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("created_at", "title", "updated_at", "author", "price", "published_date") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2026-09-14 02:14:19.211721"], ["title", "The Pragmatic Programmer"], ["updated_at", "2026-09-14 02:14:19.211721"], ["author", "Andy Hunt"], ["price", "39.99"], ["published_date", "1999-10-20"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/books/15" for 127.0.0.1 at 2026-09-13 21:14:19 -0500
+Processing by BooksController#destroy as HTML
+  Parameters: {"id" => "15"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 15]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 303 See Other in 1ms (ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
