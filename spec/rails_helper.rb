@@ -69,4 +69,17 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Every page requires a signed-in admin, so request and feature specs sign
+  # one in first. Tag a spec with signed_out: true to test as a visitor.
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.before do |example|
+    next unless %i[request feature].include?(example.metadata[:type])
+    next if example.metadata[:signed_out]
+
+    # Rails 8 loads routes lazily; Devise needs them loaded to find the Admin mapping.
+    Rails.application.reload_routes_unless_loaded
+    sign_in Admin.create!(email: "admin@example.com", full_name: "Test Admin")
+  end
 end

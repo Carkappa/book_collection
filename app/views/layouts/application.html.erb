@@ -24,11 +24,8 @@
   </head>
 
   <body>
-    <% if notice.present? %>
-      <p style="color: green"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p style="color: red"><%= alert %></p>
+    <% flash.each do |key, value| %>
+      <section class="flash flash__<%= key %>"><%= value %></section>
     <% end %>
 
     <%= yield %>

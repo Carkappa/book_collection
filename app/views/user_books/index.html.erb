@@ -2,6 +2,9 @@
 
 <h1>User Books</h1>
 
+<h1>You're logged in! Welcome to the Dashboard!</h1>
+<%= link_to "Sign Out", destroy_admin_session_path %>
+
 <div id="user_books">
   <% @user_books.each do |user_book| %>
     <%= render user_book %>

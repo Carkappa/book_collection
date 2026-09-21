@@ -16,7 +16,13 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+gem "devise", "~>4.9"
 
+gem "omniauth", "~> 2.1"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem "omniauth-google-oauth2", "~> 1.1"
 # json 3.0 drops the second argument to JSON.parse, which ActiveSupport 8.1
 # still passes when decrypting session cookies. Stay on 2.x, at 2.19.9+ for CVEs.
 gem "json", "~> 2.19", ">= 2.19.9"

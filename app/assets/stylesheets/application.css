@@ -8,3 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* Flash messages from app/views/layouts/application.html.erb */
+.flash__alert   { color: red; }
+.flash__notice  { color: blue; }
+.flash__success { color: green; }
